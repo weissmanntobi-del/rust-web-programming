@@ -1,3 +1,4 @@
+
 # Chapter 7 - Authentication with JWT
 
 Covers:
