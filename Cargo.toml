@@ -1,0 +1,40 @@
+[workspace]
+members = [
+    "chapter-01-foundations",
+    "chapter-02-http-routing",
+    "chapter-03-axum-api",
+    "chapter-04-validation-errors",
+    "chapter-05-middleware-security",
+    "chapter-06-sqlx-postgres",
+    "chapter-07-jwt-auth",
+    "chapter-08-redis-background",
+    "chapter-09-realtime",
+    "chapter-10-frontend-integration",
+    "chapter-11-testing-quality",
+    "chapter-12-production-deployment",
+]
+resolver = "2"
+
+[workspace.dependencies]
+anyhow = "1"
+argon2 = "0.5"
+axum = { version = "0.8", features = ["ws", "macros"] }
+chrono = { version = "0.4", features = ["serde"] }
+futures-util = "0.3"
+jsonwebtoken = "9"
+#rand_core = { version = "0.6", features = ["std"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+redis = { version = "0.27", features = ["tokio-comp"] }
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"] }
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+tower = { version = "0.5", features = ["util"] }
+#tower-http = { version = "0.6", features = ["cors", "trace", "timeout", "limit",  "request-id", "fs","compression-full"] }
+tower-http = { version = "0.6", features = ["cors", "trace", "timeout", "limit", "fs", "request-id", "compression-full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+uuid = { version = "1", features = ["v4", "serde"] }

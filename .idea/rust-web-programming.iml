@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/chapter-01-foundations/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-02-http-routing/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-03-axum-api/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-04-validation-errors/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-05-middleware-security/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-06-sqlx-postgres/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-07-jwt-auth/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-08-redis-background/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-09-realtime/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-10-frontend-integration/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-11-testing-quality/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-11-testing-quality/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter-12-production-deployment/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

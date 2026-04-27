@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasktracker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tasktracker
+  template:
+    metadata:
+      labels:
+        app: tasktracker
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/your-org/tasktracker:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: HTTP_ADDR
+              value: 0.0.0.0:3000
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: tasktracker-secrets
+                  key: database-url
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: tasktracker-secrets
+                  key: jwt-secret
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /livez
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tasktracker
+spec:
+  selector:
+    app: tasktracker
+  ports:
+    - port: 80
+      targetPort: 3000
