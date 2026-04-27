@@ -1,3 +1,4 @@
+## Rust Web Programming Book : https://tobiweissmann.gumroad.com/l/gztncx
 # Rust Web Programming - Chapter-wise Code Pack
 
 This repository contains chapter-wise Rust code examples for the **Rust Web Programming MiniBook**.
